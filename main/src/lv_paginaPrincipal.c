@@ -7,6 +7,7 @@ void create_header(lv_obj_t *parent)
     lv_obj_set_width(header, lv_pct(100));
     lv_obj_set_height(header, 70);
     lv_obj_set_style_radius(header, 0, 0);
+    lv_obj_clear_flag(header, LV_OBJ_FLAG_SCROLLABLE);
 
     lv_obj_t *title = lv_label_create(header);
     lv_label_set_text(title, "EMPRESA FICTICIA");
@@ -20,8 +21,9 @@ void create_initial_page(void)
     lv_scr_load(scr);
     lv_obj_t *bg = lv_obj_create(scr);
     lv_obj_set_size(bg, lv_pct(100), lv_pct(100));
-    lv_obj_set_style_bg_color(bg, lv_color_hex(0xD3D3D3), 0);
-    lv_obj_set_style_bg_grad_color(bg, lv_color_hex(0xA9A9A9), 0);
+
+    lv_obj_set_style_bg_color(bg, lv_palette_main(LV_PALETTE_RED), 0);
+    lv_obj_set_style_bg_grad_color(bg, lv_palette_main(LV_PALETTE_BLUE), 0);
     lv_obj_set_style_bg_grad_dir(bg, LV_GRAD_DIR_HOR, 0);
     lv_obj_set_style_radius(bg, 0, 0);
     lv_obj_set_style_border_width(bg, 0, 0);
