@@ -29,8 +29,8 @@ void create_initial_page(void)
     create_header(scr);
 
     lv_obj_t *label = lv_label_create(scr);
-    lv_label_set_text(label, "Titulo");
-    lv_obj_set_style_text_font(label, &lv_font_montserrat_28, 0);
+    lv_label_set_text(label, "Titulo Bem Grande");
+    lv_obj_set_style_text_font(label, &lv_font_montserrat_46, 0);
     lv_obj_align(label, LV_ALIGN_CENTER, 0, -60);
 
     lv_obj_t *paragraph = lv_label_create(scr);
