@@ -35,27 +35,27 @@ void create_initial_page(void)
     create_header(scr);
 
     lv_obj_t *label = lv_label_create(scr);
-    lv_label_set_text(label, "Titulo Bem Grande");
-    lv_obj_set_style_text_font(label, &lv_font_montserrat_46, 0);
-    lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 80);
+    lv_label_set_text(label, "LVGL NA CRIACAO DE INTERFACES");
+    lv_obj_set_style_text_font(label, &lv_font_montserrat_36, 0);
+    lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 90);
 
     lv_obj_t *paragraph = lv_label_create(scr);
-    lv_label_set_text(paragraph, "loren ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.");
+    lv_label_set_text(paragraph, "Aqui estao alguns componentes simples criados com LVGL, demonstrando sua versatilidade e facilidade no desenvolvimento de interfaces graficas.");
     lv_label_set_long_mode(paragraph, LV_LABEL_LONG_WRAP);
     lv_obj_set_width(paragraph, lv_pct(90));
     lv_obj_align(paragraph, LV_ALIGN_CENTER, 0, -150);
 
-    // lv_obj_t *btn = lv_btn_create(scr);
-    // lv_obj_align(btn, LV_ALIGN_CENTER, 0, 60);
-    // lv_obj_set_style_bg_color(btn, lv_color_black(), 0);
+    lv_obj_t *btn = lv_btn_create(scr);
+    lv_obj_align(btn, LV_ALIGN_CENTER, 0, -90);
+    lv_obj_set_style_bg_color(btn, lv_color_black(), 0);
 
-    // lv_obj_t *btn_label = lv_label_create(btn);
-    // lv_label_set_text(btn_label, "Proxima Pagina");
+    lv_obj_t *btn_label = lv_label_create(btn);
+    lv_label_set_text(btn_label, "Proxima Pagina");
 
-    // lv_obj_t *icon4 = lv_label_create(btn);
-    // lv_label_set_text(icon4, LV_SYMBOL_RIGHT);
-    // lv_obj_set_style_text_color(icon4, lv_color_white(), 0);
-    // lv_obj_align(icon4, LV_ALIGN_RIGHT_MID, 15, 0);
+    lv_obj_t *icon4 = lv_label_create(btn);
+    lv_label_set_text(icon4, LV_SYMBOL_RIGHT);
+    lv_obj_set_style_text_color(icon4, lv_color_white(), 0);
+    lv_obj_align(icon4, LV_ALIGN_RIGHT_MID, 15, 0);
 
     lv_obj_t *chart1 = lv_chart_create(scr);
     lv_obj_set_size(chart1, lv_pct(45), 150);
@@ -100,12 +100,26 @@ void create_initial_page(void)
     lv_obj_align(chart2_label, LV_ALIGN_OUT_TOP_MID, 0, -10);
 
     lv_obj_t *slider = lv_slider_create(scr);
-    lv_obj_set_width(slider, lv_pct(80));
-    lv_obj_align(slider, LV_ALIGN_BOTTOM_MID, 0, -100);
+    lv_obj_set_width(slider, lv_pct(20));
+    lv_obj_align(slider, LV_ALIGN_BOTTOM_LEFT, 10, -100);
     lv_slider_set_range(slider, 0, 100);
     lv_slider_set_value(slider, 40, LV_ANIM_OFF);
 
     lv_obj_t *slider_label = lv_label_create(slider);
     lv_label_set_text_fmt(slider_label, "Slider: %d", 40);
     lv_obj_align_to(slider_label, slider, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+
+    lv_obj_t *calendar = lv_calendar_create(scr);
+    lv_obj_set_size(calendar, 200, 200);
+    lv_obj_align(calendar, LV_ALIGN_BOTTOM_MID, -50, -10);
+
+    const lv_calendar_date_t *today;
+    lv_calendar_date_t highlighted_days[1];
+    today = lv_calendar_get_today_date(calendar);
+    highlighted_days[0] = *today;
+    lv_calendar_set_highlighted_dates(calendar, highlighted_days, 1);
+
+    lv_obj_t *kb = lv_keyboard_create(scr);
+    lv_obj_set_size(kb, 300, 150);
+    lv_obj_align(kb, LV_ALIGN_BOTTOM_RIGHT, -10, -50);
 }
