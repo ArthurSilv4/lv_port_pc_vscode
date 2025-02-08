@@ -6,12 +6,9 @@ Este projeto é um fork da configuração do LVGL para o Visual Studio Code. Nel
 
 O objetivo deste projeto é avaliar o desempenho e as funcionalidades da biblioteca gráfica LVGL em comparação com a biblioteca gráfica anterior.
 
-## Estrutura do Projeto
+## Projeto
 
-- `src/`: Contém o código-fonte da aplicação de teste.
-- `include/`: Contém os arquivos de cabeçalho.
-- `lvgl/`: Contém a biblioteca LVGL.
-- `docs/`: Documentação do projeto.
+![LVGL vs Antiga Biblioteca](/github/projeto.png)
 
 ## Como Usar
 
